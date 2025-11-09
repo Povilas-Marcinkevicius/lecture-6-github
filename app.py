@@ -34,13 +34,6 @@ if uploaded_file is not None:
     with col2:
         st.subheader("AI Aprašymas")
         
-        # Text input for user question
-        user_question = st.text_input(
-            "Jūsų klausimas apie paveikslėlį",
-            value="Aprašyk šį paveikslėlį detaliai lietuvių kalba. Pasakyk ką matai paveikslėlyje.",
-            help="Įveskite klausimą, kurį norite užduoti apie paveikslėlį"
-        )
-        
         # Button to analyze the image
         if st.button("Analizuoti paveikslėlį", type="primary"):
             with st.spinner("Analizuojama..."):
@@ -55,7 +48,7 @@ if uploaded_file is not None:
                         model='gemma3:4b',
                         messages=[{
                             'role': 'user',
-                            'content': user_question,
+                            'content': 'Aprašyk šį paveikslėlį detaliai lietuvių kalba. Pasakyk ką matai paveikslėlyje.',
                             'images': [img_bytes]
                         }]
                     )
