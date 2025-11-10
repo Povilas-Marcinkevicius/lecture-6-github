@@ -10,6 +10,15 @@ st.set_page_config(
     layout="centered"
 )
 
+# Custom CSS for red background
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #8B0000;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Application title
 st.title("🖼️ Paveikslėlio Aprašymas su AI")
 st.markdown("Įkelkite paveikslėlį ir dirbtinis intelektas apibūdins jo turinį.")
